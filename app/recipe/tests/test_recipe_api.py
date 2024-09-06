@@ -60,8 +60,10 @@ class PrivateRecipeAPITests(TestCase):
     """Test authenticated API requests."""
     def setUp(self):
         self.client = APIClient()
-        self.user = create_user(email="user@example.com", password="test123")
-        self.other_user = create_user(email="other@example.com", password="password123")
+        self.user = create_user(email="user@example.com",
+                                password="test123")
+        self.other_user = create_user(email="other@example.com",
+                                      password="password123")
         self.client.force_authenticate(self.user)
 
     def test_retrieve_recipes(self):
